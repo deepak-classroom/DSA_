@@ -111,27 +111,51 @@
 
 // program to find the largest number in an array.
 
+// #include <stdio.h>
+
+// int array_max_num(int arr[], int size) {
+//     int max_val = arr[0];
+
+//     for (int i = 1; i < size; i++)
+//     {
+//         if(arr[i] > max_val) {
+//             max_val = arr[i];
+//         }
+//     }
+//     return max_val;
+// }
+
+// int main() {
+//     int arr[] = {1, 2, 3, 4, 5, 6};
+//     int size = sizeof(arr)/sizeof(arr[0]);
+
+//     int max_num = array_max_num(arr, size);
+//     printf("Maximum Nmber %d\n", max_num);
+
+//     return 0;
+// }
+
+// Program to find the minimum number in an array.
+
 #include <stdio.h>
 
-int array_max_num(int arr[], int size) {
-    int max_val = arr[0];
+int find_min_num(int arr[], int size) {
+    int min_val  = arr[0];
 
-    for (int i = 1; i < size; i++)
-    {
-        if(arr[i] > max_val) {
-            max_val = arr[i];
+    for (int i = 1; i < size; i++) {
+        if  (arr[i] < min_val) {
+            min_val = arr[i];
         }
     }
-    return max_val;
+    return min_val;
 }
 
 int main() {
-    int arr[] = {1, 2, 3, 4, 5, 6};
-    int size = sizeof(arr)/sizeof(arr[0]);
+    int array[] = {1, 2,  3, 4, 5};
+    int size = sizeof(array)  / sizeof(array[0]);
 
-    int max_num = array_max_num(arr, size);
-    printf("Maximum Nmber %d\n", max_num);
+    int min_num = find_min_num(array, size);
+    printf("Minimum Number %d\n", min_num);
 
     return 0;
 }
-
