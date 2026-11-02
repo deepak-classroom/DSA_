@@ -56,18 +56,81 @@
 
 // Deleting the element from the array.
 
+// #include <stdio.h>
+// int main() {
+//     int arr[] = {10, 20, 30, 40, 50};
+//     int size = 5;
+//     int del_idx = 2;
+
+//     for(int i = del_idx; i < size; i++) {
+//         arr[i] = arr[i + 1];
+//     }
+//     size--;
+
+//     for(int i = 0; i < size; i++) printf("%d ", arr[i]);
+
+//     return 0;
+// }
+
+
+// Finding maximum and minimum value in an array
+
+// #include <stdio.h>
+
+// // struccture to return both, max and min function.
+// struct pair {
+//     int min;
+//     int max;
+// };
+
+// struct Pair getMinMax(int arr[], int n) {
+//     struct pair minmax;
+//     int i;
+
+//     if(n==1) {
+//         minmax.max = arr[0];
+//         minmax.min = arr[0];
+//         return minmax;
+//     }
+//     if (n % 2 == 0) {
+//         if (arr[0] > arr[1]) {
+//             minmax.max = arr[0];
+//             minmax.min = arr[1];
+//         } else {
+//             minmax.max = arr[1];
+//             minmax.min = arr[0];
+//         }
+//         i = 2;     // starting loop from third element
+//     } else {
+//         minmax.max = arr[0];
+//         minmax.min = arr[0];
+//         i = 1;      // start loop from second element
+//     }
+// }
+
+
+// program to find the largest number in an array.
+
 #include <stdio.h>
-int main() {
-    int arr[] = {10, 20, 30, 40, 50};
-    int size = 5;
-    int del_idx = 2;
 
-    for(int i = del_idx; i < size; i++) {
-        arr[i] = arr[i + 1];
+int array_max_num(int arr[], int size) {
+    int max_val = arr[0];
+
+    for (int i = 1; i < size; i++)
+    {
+        if(arr[i] > max_val) {
+            max_val = arr[i];
+        }
     }
-    size--;
+    return max_val;
+}
 
-    for(int i = 0; i < size; i++) printf("%d ", arr[i]);
+int main() {
+    int arr[] = {1, 2, 3, 4, 5, 6};
+    int size = sizeof(arr)/sizeof(arr[0]);
+
+    int max_num = array_max_num(arr, size);
+    printf("Maximum Nmber %d\n", max_num);
 
     return 0;
 }
